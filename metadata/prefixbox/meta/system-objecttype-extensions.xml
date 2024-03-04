@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="Prefixbox_HasAccount">
+                <display-name xml:lang="x-default">Customer registered account</display-name>
+                <description xml:lang="x-default">Customer registered account</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="Prefixbox_PrefixboxEnabled">
+                <display-name xml:lang="x-default">Enable Prefixbox</display-name>
+                <description xml:lang="x-default">Enable/disable Prefixbox</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="Prefixbox_WebsiteTracker">
+                <display-name xml:lang="x-default">Website tracker</display-name>
+                <description xml:lang="x-default">This is your unique website identifier.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="Prefixbox_ApiKey">
+                <display-name xml:lang="x-default">Api key</display-name>
+                <description xml:lang="x-default">This is your Prefixbox API key.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="Prefixbox_Fields">
+                <display-name xml:lang="x-default">Fields</display-name>
+                <description xml:lang="x-default">This is the list of the field will be mapped for Prefixbox product feed.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="Prefixbox_ProductSyncEnabled">
+                <display-name xml:lang="x-default">Product catalog sync.</display-name>
+                <description xml:lang="x-default">Connect your product catalog to Prefixbox.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="Prefixbox_ProductVariantExport">
+                <display-name xml:lang="x-default">Enable product variant export.</display-name>
+                <description xml:lang="x-default">Enable/disable product variant export.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Prefixbox">
+                <display-name xml:lang="x-default">Prefixbox Configurations</display-name>
+                <attribute attribute-id="Prefixbox_HasAccount"/>
+                <attribute attribute-id="Prefixbox_PrefixboxEnabled"/>
+                <attribute attribute-id="Prefixbox_WebsiteTracker"/>
+                <attribute attribute-id="Prefixbox_ApiKey"/>
+                <attribute attribute-id="Prefixbox_Fields"/>
+                <attribute attribute-id="Prefixbox_ProductSyncEnabled"/>
+                <attribute attribute-id="Prefixbox_ProductVariantExport"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

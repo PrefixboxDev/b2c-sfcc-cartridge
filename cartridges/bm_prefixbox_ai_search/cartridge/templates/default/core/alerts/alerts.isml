@@ -1,0 +1,39 @@
+<div id="saveChangesAlert" class="prefixbox-alert alert alert-success alert-dismissible fade collapse text-center sticky-top-with-menu-frame w-5 h-10" role="alert">
+    ${Resource.msg('prefixbox.preference.save.success', 'prefixbox', null)}
+</div>
+
+<div id="notSavedChangesAlert" class="prefixbox-alert alert alert-error alert-dismissible fade collapse text-center sticky-top-with-menu-frame w-5 h-10" role="alert">
+    ${Resource.msg('prefixbox.preference.save.error', 'prefixbox', null)}
+</div>
+
+<div id="successfulConnection" class="prefixbox-alert alert alert-success alert-dismissible fade collapse text-center sticky-top-with-menu-frame w-5 h-10" role="alert">
+    ${Resource.msg('prefixbox.preference.testconnection.success', 'prefixbox', null)}
+</div>
+
+<div id="errorInConnection" class="prefixbox-alert alert alert-warning alert-dismissible fade collapse text-center sticky-top-with-menu-frame w-5 h-10" role="alert">
+    ${Resource.msg('prefixbox.preference.testconnection.error', 'prefixbox', null)}
+</div>
+
+<div id="successfulProductCatalogSync" class="prefixbox-alert alert alert-success alert-dismissible fade collapse text-center sticky-top-with-menu-frame w-5 h-10" role="alert">
+    ${Resource.msg('prefixbox.preference.catalog.sync.success', 'prefixbox', null)}
+</div>
+
+<div id="errorInProductCatalogSync" class="prefixbox-alert alert alert-warning alert-dismissible fade collapse text-center sticky-top-with-menu-frame w-5 h-10" role="alert">
+    ${Resource.msg('prefixbox.preference.catalog.sync.error', 'prefixbox', null)}
+</div>
+
+<div id="successfulSearchEnabled" class="prefixbox-alert alert alert-success alert-dismissible fade collapse text-center sticky-top-with-menu-frame w-5 h-10" role="alert">
+    ${Resource.msg('prefixbox.preference.search.connection.success', 'prefixbox', null)}
+</div>
+
+<div id="errorInSearchEnable" class="prefixbox-alert alert alert-warning alert-dismissible fade collapse text-center sticky-top-with-menu-frame w-5 h-10" role="alert">
+    ${Resource.msg('prefixbox.preference.search.connection.error', 'prefixbox', null)}
+</div>
+
+<div id="successfulRegister" class="prefixbox-alert alert alert-success alert-dismissible fade collapse text-center sticky-top-with-menu-frame w-5 h-10" role="alert">
+    ${Resource.msg('prefixbox.preference.register.success', 'prefixbox', null)}
+</div>
+
+<div id="errorInRegister" class="prefixbox-alert alert alert-warning alert-dismissible fade collapse text-center sticky-top-with-menu-frame w-5 h-10" role="alert">
+    
+</div>

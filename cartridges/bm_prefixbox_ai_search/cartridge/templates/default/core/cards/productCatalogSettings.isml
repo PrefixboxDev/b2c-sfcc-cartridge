@@ -1,0 +1,72 @@
+<iscontent type="text/html" charset="UTF-8" compact="true" />
+<div id="productCatalogSettings" class="card bg-white mt-4">
+    <div class="card-body">
+        <h5 class="card-title mb-0">
+            ${Resource.msg('prefixbox.preference.catalog.settings.title', 'prefixbox', null)}
+        </h5>
+        <h7 class="card-subtitle">
+            <div class="first-subtitle">
+                <isprint 
+                    encoding="off" 
+                    value="${Resource.msgf('prefixbox.preference.catalog.settings.label', 'prefixbox', null)}" 
+                />
+            </div>
+        </h7>
+        <div class="mt-3">
+            <div class="form-group">
+                <div class="input-fields">
+                    <div class="form-check form-switch">
+                        <isif condition="${PrefixboxConfigs.getPreference('ProductVariantExport') || false}">
+                            <input 
+                                class="form-check-input success" 
+                                type="checkbox"
+                                name="ProductVariantExport" 
+                                checked
+                                id="ProductVariantExport" 
+                            />
+                        <iselse/>
+                            <input 
+                                class="form-check-input success" 
+                                name="ProductVariantExport" 
+                                type="checkbox"
+                                id="ProductVariantExport" 
+                            />
+                        </isif>
+                        <label class="form-check-label" for="ProductVariantExport">
+                            ${Resource.msg('prefixbox.preference.catalog.settings.product.variants.title', 'prefixbox', null)}
+                        </label>
+                    </div>
+                    <small id="fieldsHelp" class="form-text mb-1">
+                        ${Resource.msg('prefixbox.preference.catalog.settings.product.variants.description', 'prefixbox', null)}
+                    </small>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-title mb-0" for="fields">
+                    ${Resource.msg('prefixbox.preference.fields', 'prefixbox', null)}
+                </label>
+                <small id="fieldsHelp" class="form-text mb-1">
+                    ${Resource.msg('prefixbox.preference.fields.text', 'prefixbox', null)}
+                </small>
+                <small id="fieldsHelpDescription" class="form-text mb-1">
+                    ${Resource.msg('prefixbox.preference.fields.description', 'prefixbox', null)}
+                </small>
+                <div class="input-fields">
+                    <input
+                        name="Fields"
+                        id="Fields" 
+                        class="prefixbox-field-mapping-input form-control readonlyMix" 
+                        value="${PrefixboxConfigs.getPreference('Fields')}"
+                        placeholder='please type the field name'
+                        autofocus
+                    />
+                </div>
+            </div>
+            <div class="d-grid gap-2 mt-2 d-md-flex justify-content-md-end form-buttons">
+                <button type="submit" id="productCatalogSettingsFormButton" class="btn btn-success border formButton">
+                    ${Resource.msg('prefixbox.ui.button.save', 'prefixbox', null)}
+                </button>
+            </div>
+        </div>
+    </div> 
+</div>

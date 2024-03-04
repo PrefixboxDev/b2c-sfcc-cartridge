@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<extensions xmlns="http://www.demandware.com/xml/bmmodules/2007-12-11" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.demandware.com/xml/bmmodules/2007-12-11 bmext.xsd">
+    <menuitem id="prefixbox-menu-item" position="1" site="true">
+        <name xml:lang="x-default">Prefixbox AI Search for B2C Commerce</name>
+        <short_description xml:lang="x-default">Fully managed AI Search solution that improves conversion rate and user experience for E-commerce stores.</short_description>
+        <description xml:lang="x-default">Fully managed AI Search solution that improves conversion rate and user experience for E-commerce stores.</description>
+        <icon>icons/logo.png</icon>
+    </menuitem>
+    <menuaction id="prefixbox-menu-second" menupath="prefixbox-menu-item" position="1" site="true">
+        <name xml:lang="x-default">Settings</name>
+        <short_description xml:lang="x-default">Configure your Prefixbox AI Search settings.</short_description>
+        <description xml:lang="x-default">Configure your Prefixbox AI Search settings.</description>
+        <exec pipeline="Prefixbox" node="Start" />
+        <sub-pipelines>
+            <pipeline name="Prefixbox"/>
+            <pipeline name="Prefixbox-HandleSettings"/>
+        </sub-pipelines>
+        <icon>icons/logo.png</icon>
+    </menuaction>
+</extensions>

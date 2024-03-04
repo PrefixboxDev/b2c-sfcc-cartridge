@@ -1,0 +1,10 @@
+.brand.prefixbox-filter-container, 
+.brand.prefixbox-mobile-filter-container, 
+.brand.prefixbox-selected-filter-value-filter-value-container,
+.brand.prefixbox-mobile-selected-filter-value-filter-value-container {
+    position: relative;
+    text-align: left;
+    margin-left: auto;
+    width: auto;
+    left: auto;
+}

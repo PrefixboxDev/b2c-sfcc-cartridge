@@ -1,0 +1,14 @@
+
+<iscomment>Custom Start: Prefixbox Data</iscomment>
+<isset name="prefixboxConfigs" value="${require('*/cartridge/scripts/prefixbox/persistence/data')}" scope="page" />
+<iscomment>Custom End: Prefixbox Data</iscomment>
+
+<iscomment>Custom Start: Prefixbox Integration</iscomment>
+<isif condition="${prefixboxConfigs.getPreference('PrefixboxEnabled')}">
+    <script>
+        window.prefixboxAnalytics=window.prefixboxAnalytics||function(t,s,p,o){(window.pfbxQueue=window.pfbxQueue||[]).push({type:t,source:s,params:p,overrideObject:o});};
+        window.prefixboxFunctions=window.prefixboxFunctions||{}; window.prefixboxCustomerFunctions=window.prefixboxCustomerFunctions||{};
+    </script>
+    <script id="prefixbox-integration" website="${prefixboxConfigs.getPreference('WebsiteTracker')}" src="https://cdn.prefixbox.com/plugin/integration.js"></script>
+</isif>
+<iscomment>Custom End: Prefixbox Integration</iscomment>

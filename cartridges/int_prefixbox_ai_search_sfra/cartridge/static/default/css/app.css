@@ -1,0 +1,55 @@
+:root  {
+    --text-color: black;
+    --primary-color: black;
+    --secondary-color: black;
+    --filter-font-size: 16px;
+}
+
+.close-off-canvas-button, 
+.open-off-canvas-button {
+    font-size: 24px;
+    font-family: remixicon!important;
+    font-style: normal;
+    color: black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.close-off-canvas-button {
+    font-size: 26px;
+}
+
+.close-off-canvas-button::before {
+    content: "\eb99";
+    display: block;
+}
+
+.off-canvas {
+    position: fixed;
+    width: 60%;
+    z-index: 111;
+    background-color: #fff;
+    padding: 15px;
+    top: 0;
+    height: 100%;
+    transform: translateX(-200%);
+    transition: all ease-in 200ms;
+}
+
+.opened.off-canvas {
+    transform: translateX(0%);
+    left: 0;
+    top: 0;
+    transition: all ease-out 200ms;
+}
+
+.mobile-offcanvas {
+    width: fit-content;
+}
+
+.off-canvas.pfbx-shadow-md.opened {
+    overflow: scroll;
+}

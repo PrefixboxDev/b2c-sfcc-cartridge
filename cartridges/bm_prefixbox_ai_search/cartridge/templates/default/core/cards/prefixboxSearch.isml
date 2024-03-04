@@ -1,0 +1,39 @@
+<iscontent type="text/html" charset="UTF-8" compact="true" />
+<div id="prefixboxSearch" class="card bg-white mt-4 visually-hidden">
+    <div class="card-body">
+        <h5 class="card-title mb-0">
+            ${Resource.msg('prefixbox.preference.search.title', 'prefixbox', null)}
+        </h5>
+        <h7 class="card-subtitle">
+            <div class="first-subtitle">
+                <isprint 
+                    encoding="off" 
+                    value="${Resource.msg('prefixbox.preference.search.description', 'prefixbox', null)}" 
+                />
+            </div>
+        </h7>
+        <div class="mt-3">
+            <isif condition="${PrefixboxConfigs.getPreference('PrefixboxEnabled')}">
+                <button 
+                    type="button"
+                    disabled
+                    class="btn btn-success border"
+                >
+                    ${Resource.msg('prefixbox.preference.search.connected', 'prefixbox', null)}
+                </button>
+            <iselse/>
+                <button 
+                    type="button"
+                    id="prefixboxConnectSearchButton" 
+                    class="btn btn-success border"
+                    data-connected-text="${Resource.msg('prefixbox.preference.search.connected', 'prefixbox', null)}"
+                >
+                    ${Resource.msg('prefixbox.preference.search.connect', 'prefixbox', null)}
+                    <div id="enable-search-loading" class="spinner-border text-white button-loading-icon visually-hidden" role="status">
+                        <span class="visually-hidden"/>
+                    </div>
+                </button>
+            </isif>
+        </div>
+    </div> 
+</div>

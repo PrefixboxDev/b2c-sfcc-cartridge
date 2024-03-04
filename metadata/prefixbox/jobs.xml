@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobs xmlns="http://www.demandware.com/xml/impex/jobs/2015-07-01">
+    <job job-id="prefixboxProductExportFull" priority="0">
+        <description>Export all products assigned to the selected site to Prefixbox.</description>
+        <parameters/>
+        <flow>
+            <context site-id="RefArch"/>
+            <step step-id="ExportProductsToPrefixbox" type="custom.prefixbox.prefixboxProductExportFull" enforce-restart="false">
+                <description />
+                <parameters>
+                    <parameter name="srcFolder">/src/prefixbox/feeds/products/</parameter>
+                    <parameter name="deleteFile">true</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules>
+            <on-running runtime-threshold="60m" enabled="false">
+                <mark-job-as-hanging/>
+            </on-running>
+        </rules>
+        <triggers>
+            <run-recurring enabled="true">
+                <recurrence>
+                    <date-from>2024-01-02Z</date-from>
+                    <start-time>12:00:00.000Z</start-time>
+                    <interval>4h</interval>
+                    <day-of-week/>
+                </recurrence>
+            </run-recurring>
+        </triggers>
+    </job>
+</jobs>

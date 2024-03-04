@@ -1,0 +1,152 @@
+<iscontent type="text/html" charset="UTF-8" compact="true" />
+
+<isif condition="${!PrefixboxConfigs.getPreference('HasAccount')}">
+    <div class="collapse" id="createAccount">
+        <div id="register" class="card bg-white mt-4">
+            <div class="card-body">
+                <h5 class="card-title mb-0">
+                    ${Resource.msg('prefixbox.preference.settings.create', 'prefixbox', null)}
+                </h5>
+                <h7 class="card-subtitle">
+                    <div class="first-subtitle">
+                        <isprint 
+                            encoding="off" 
+                            value="${Resource.msg('prefixbox.preference.register.description', 'prefixbox', null)}" 
+                        />
+                    </div>
+                </h7>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group mt-1">
+                            <label class="form-title mb-1" for="Email">
+                                ${Resource.msg('prefixbox.preference.register.email', 'prefixbox', null)}
+                            </label>
+                            <div class="input-fields">
+                                <input 
+                                    type="email" 
+                                    class="form-control" 
+                                    name="Email" 
+                                    id="Email" 
+                                    aria-describedby="emailHelp" 
+                                    placeholder="mail@example.com"
+                                    value="" 
+                                    required
+                                    pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                                    title="Please type valid e-mail address."
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group mt-1">
+                            <label class="form-title mb-1" for="Password">
+                                ${Resource.msg('prefixbox.preference.register.password', 'prefixbox', null)}
+                            </label>
+                            <div class="input-fields">
+                                <input 
+                                    type="password" 
+                                    class="form-control password" 
+                                    name="Password" 
+                                    id="Password" 
+                                    placeholder="N4.mGV]kdFd^ycz"
+                                    value="" 
+                                    required
+                                    minlength="8"
+                                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                    title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group mt-1">
+                            <label class="form-title mb-1" for="Website">
+                                ${Resource.msg('prefixbox.preference.register.website', 'prefixbox', null)}
+                            </label>
+                            <div class="input-fields">
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    name="Website" 
+                                    id="Website" 
+                                    value="${Site.current.httpsHostName}"
+                                    disabled
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group mt-1">
+                            <label class="form-title mb-1" for="Currency">
+                                ${Resource.msg('prefixbox.preference.register.currency', 'prefixbox', null)}
+                            </label>
+                            <div class="input-fields">
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    name="Currency" 
+                                    id="Currency" 
+                                    value="${Site.current.currencyCode}"
+                                    disabled
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group mt-1">
+                            <label class="form-title mb-1" for="Firstname">
+                                ${Resource.msg('prefixbox.preference.register.firstname', 'prefixbox', null)}
+                            </label>
+                            <div class="input-fields">
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    name="Firstname" 
+                                    id="Firstname" 
+                                    placeholder="John"
+                                    value="" 
+                                    required
+                                    minlength="2"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group mt-1">
+                            <label class="form-title mb-1" for="Lastname">
+                                ${Resource.msg('prefixbox.preference.register.lastname', 'prefixbox', null)}
+                            </label>
+                            <div class="input-fields">
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    name="Lastname" 
+                                    id="Lastname" 
+                                    placeholder="Doe"
+                                    value="" 
+                                    required
+                                    minlength="2"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-grid gap-2 mt-2 d-md-flex justify-content-md-end form-buttons">
+                    <button type="button" id="cancel" data-bs-toggle="collapse" href="#createAccount" role="button" aria-expanded="false" aria-controls="createAccount" class="btn btn-secondary border formButton">
+                        ${Resource.msg('prefixbox.ui.button.cancel', 'prefixbox', null)}
+                    </button>
+                    <button type="submit" id="registerButton" class="btn btn-success border formButton">
+                        ${Resource.msg('prefixbox.ui.button.create', 'prefixbox', null)}
+                        <div id="register-loading" class="spinner-border text-white button-loading-icon visually-hidden" role="status">
+                            <span class="visually-hidden"/>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</isif>

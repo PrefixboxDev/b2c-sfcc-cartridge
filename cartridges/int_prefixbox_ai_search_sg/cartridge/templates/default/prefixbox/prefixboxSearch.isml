@@ -1,0 +1,43 @@
+<isdecorate template="checkout/pt_checkout">
+    <iscontent type="text/html" charset="UTF-8" />
+    <isslot id="search-result-banner-m" description="Banner for search results" context="global" />
+    <div class="container search-results">
+        <isif condition="${pdict.prefixboxEnabled}">
+            <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.min.css" rel="stylesheet" />
+            <link rel="stylesheet" href="${URLUtils.staticURL('/css/main.css')}" />
+            <link rel="stylesheet" href="${URLUtils.staticURL('/css/prefixbox.css')}" />            
+            <div id="prefixbox-main" class="grid-3 pfbx-mt-5">
+                <div id="prefixbox-search-container" class="pfbx-flex pfbx-flex-col lg:pfbx-flex-row pfbx-gap-2 md:pfbx-gap-4 lg:pfbx-gap-4 pfbx-mt-10 pfbx-mb-10">
+                    <div class="mobile-offcanvas pfbx-block lg:pfbx-hidden">
+                        <div class=" pfbx-flex pfbx-items-center pfbx-justify-center">
+                            <button type="button" class="open-off-canvas-button" onClick="return openOffcanvas()">
+                                ${Resource.msg('prefixbox.filters.label', 'prefixbox', null)}
+                            </button>
+                        </div>
+                        <div class="off-canvas pfbx-shadow-md">
+                            <div class=" pfbx-flex pfbx-items-end pfbx-justify-end">
+                                <button type="button" class="close-off-canvas-button" onClick="return openOffcanvas()"></button>
+                            </div>
+                            <div class="mobile-selected-filters" id="mobile-selected-filters"></div>
+                            <div class="mobile-filters" id="mobile-filters"></div>
+                        </div>
+                    </div>
+                    <div id="filters-container" class="pfbx-w-full lg:pfbx-w-1/5">
+                        <div class="selected-filters" id="selected-filters"></div>
+                        <div class="filters" id="filters"></div>
+                    </div>
+                    <div id="pfbx-results-container" class="pfbx-w-full lg:pfbx-w-4/5">
+                        <div id="pfbx-result-informations" class="pfbx-flex pfbx-justify-between">
+                            <div class="result-data" id="result-data"></div>
+                            <div class="page-size" id="page-size"></div>
+                            <div id="sort-direction" class="pfbx-flex pfbx-items-center pfbx-justify-center"></div>
+                        </div>
+                        <div class="results" id="results"></div>
+                    </div>
+                </div>
+                <div id="paginator" class="pfbx-flex pfbx-justify-center pfbx-items-center pfbx-mt-6"></div>
+            </div>                    
+        </isif>
+    </div>
+    <script src="${URLUtils.staticURL('/js/app.js')}"></script>
+</isdecorate>

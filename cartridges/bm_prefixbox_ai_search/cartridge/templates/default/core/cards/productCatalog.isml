@@ -1,0 +1,81 @@
+<iscontent type="text/html" charset="UTF-8" compact="true" />
+<div id="productCatalog" class="card bg-white mt-4 ${PrefixboxConfigs.getPreference('ApiKey') ? '' : 'visually-hidden'}">
+    <div class="card-body">
+        <h5 class="card-title mb-0">
+            ${Resource.msg('prefixbox.preference.catalog.title', 'prefixbox', null)}
+        </h5>
+        <h7 class="card-subtitle">
+            <div class="first-subtitle">
+                ${Resource.msg('prefixbox.preference.catalog.description', 'prefixbox', null)}
+            </div>
+        </h7>
+        <p class="mt-1">${Resource.msg('prefixbox.preference.catalog.label', 'prefixbox', null)}</p>
+        <p class="mt-1"> 
+            <isprint 
+                encoding="off" 
+                value="${Resource.msg('prefixbox.preference.catalog.refresh.text', 'prefixbox', null)}" 
+            />
+        </p>
+        <div class="mt-3">
+            <isif condition="${PrefixboxConfigs.getPreference('ProductSyncEnabled')}">
+                <button 
+                    type="button"
+                    disabled
+                    id="productCatalogSyncButton"
+                    class="btn btn-success border"
+                >
+                    ${Resource.msg('prefixbox.preference.catalog.connect', 'prefixbox', null)}
+                </button>
+            <iselse/>
+                <button 
+                    type="button" 
+                    id="productCatalogSyncButton" 
+                    class="btn btn-success border"
+                >
+                    ${Resource.msg('prefixbox.preference.catalog.connected', 'prefixbox', null)}
+                    <div id="product-catalog-sync-loading" class="spinner-border text-white button-loading-icon visually-hidden" role="status">
+                        <span class="visually-hidden"/>
+                    </div>
+                </button>
+            </isif>
+            <button 
+                type="button" 
+                id="refreshSuggestionList" 
+                class="btn btn-light border ml-2"
+            >
+                ${Resource.msg('prefixbox.ui.button.refresh', 'prefixbox', null)}
+                <div id="refresh-loading" class="spinner-border text-dark button-loading-icon visually-hidden" role="status">
+                    <span class="visually-hidden"/>
+                </div>
+            </button>
+        </div>
+        <p class="mt-1" id="lastRefresh"></p>
+        <div id="file-table" class="mt-3 ${PrefixboxConfigs.getPreference('ProductSyncEnabled') ? "visually-hidden" : ""}">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            ${Resource.msg('prefixbox.preference.catalog.table.validation', 'prefixbox', null)}
+                        </th>
+                        <th scope="col">
+                            ${Resource.msg('prefixbox.preference.catalog.table.conversion', 'prefixbox', null)}
+                        </th>
+                        <th scope="col">
+                            ${Resource.msg('prefixbox.preference.catalog.table.status', 'prefixbox', null)}
+                        </th>
+                        <th scope="col">
+                            ${Resource.msg('prefixbox.preference.catalog.table.version', 'prefixbox', null)}
+                        </th>
+                        <th scope="col">
+                            ${Resource.msg('prefixbox.preference.catalog.table.product.count', 'prefixbox', null)}
+                        </th>
+                        <th scope="col">
+                            ${Resource.msg('prefixbox.preference.catalog.table.size', 'prefixbox', null)}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="fileVersionsTable"></tbody>
+            </table>
+        </div>          
+    </div> 
+</div>

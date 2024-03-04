@@ -1,0 +1,60 @@
+{
+  "name": "int_prefixbox_ai_search",
+  "version": "7.0.0",
+  "description": "Prefixbox SFRA and SG Link Cartridge",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18.0"
+  },
+  "scripts": {
+    "lint": "npm run lint:css && npm run lint:js",
+    "lint:css": "sgmf-scripts --lint css",
+    "lint:js": "sgmf-scripts --lint js",
+    "compile:scss": "sgmf-scripts --compile css",
+    "compile:js": "sgmf-scripts --compile js",
+    "compile:fonts": "node bin/Makefile compileFonts",
+    "test": "jest ./test/unit",
+    "test:watch": "jest ./test/unit --watch",
+    "test:coverage": "jest ./test/unit --coverage",
+    "test:coverageHTML": "jest ./test/unit --coverage --coverageDirectory='coverage'",
+    "build": "npm run compile:js",
+    "cover": "sgmf-scripts --cover 'test'",
+    "upload": "sgmf-scripts --upload",
+    "uploadCartridge": "sgmf-scripts --uploadCartridge bm_prefixbox_ai_search && sgmf-scripts --uploadCartridge int_prefixbox_ai_search && sgmf-scripts --uploadCartridge int_prefixbox_ai_search_sfra"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SalesforceCommerceCloud/storefront-reference-architecture.git"
+  },
+  "author": "Sándor Micik <mitsyk@prefixbox.com>",
+  "license": "ISC",
+  "homepage": "https://github.com/SalesforceCommerceCloud/storefront-reference-architecture",
+  "devDependencies": {
+    "@babel/core": "7.6.3",
+    "@babel/plugin-proposal-object-rest-spread": "7.6.2",
+    "@babel/preset-env": "7.6.3",
+    "babel-loader": "^8.0.6",
+    "chai": "3.5.0",
+    "css-loader": "6.10.0",
+    "eslint": "8.56.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-sitegenesis": "~1.0.0",
+    "jest": "29.6.4",
+    "postcss-loader": "8.1.0",
+    "proxyquire": "1.7.4",
+    "sass": "1.51.0",
+    "sass-loader": "7.3.1",
+    "sgmf-scripts": "3.0.0",
+    "stylelint": "16.2.1",
+    "stylelint-config-standard": "36.0.0"
+  },
+  "dependencies": {
+    "chai-subset": "1.6.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "ie >= 10"
+  ],
+  "packageName": "int_prefixbox_ai_search"
+}
