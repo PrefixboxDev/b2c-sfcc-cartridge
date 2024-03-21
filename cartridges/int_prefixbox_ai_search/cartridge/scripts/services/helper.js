@@ -11,9 +11,11 @@ var prefixboxConstants = require('*/cartridge/scripts/prefixbox/lib/constants');
  */
 function getAPIHeaders() {
     var apiKey = persistence.getPreference('ApiKey');
+    var websiteTracker = persistence.getPreference('WebsiteTracker');
 
     return {
-        'X-PREFIXBOX-API-KEY': apiKey
+        'X-PREFIXBOX-API-KEY': apiKey,
+        'X-PREFIXBOX-WEBSITE-TRACKER': websiteTracker,
     };
 }
 
@@ -24,10 +26,12 @@ function getAPIHeaders() {
  */
 function getFileUploadHeaders() {
     var apiKey = persistence.getPreference('ApiKey');
-
+    var websiteTracker = persistence.getPreference('WebsiteTracker');
+    
     return {
         'Content-Type': 'application/octet-stream',
         'X-PREFIXBOX-API-KEY': apiKey,
+        'X-PREFIXBOX-WEBSITE-TRACKER': websiteTracker,
     };
 }
 
