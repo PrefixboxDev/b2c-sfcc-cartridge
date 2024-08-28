@@ -14,7 +14,7 @@
                 "total-count-function": "",
                 "before-step-function": "beforeStep",
                 "before-chunk-function": "",
-                "after-chunk-function": "",
+                "after-chunk-function": "afterChunk",
                 "after-step-function": "afterStep",
                 "chunk-size": 1000,
                 "transactional": false,
@@ -31,7 +31,7 @@
                         },
                         {
                             "@name": "deleteFile",
-                            "description": "Delete file after sucessfull upload to prefixbox",
+                            "description": "Delete file after successful upload to prefixbox",
                             "@type": "boolean",
                             "@required": "false",
                             "@trim": "true",

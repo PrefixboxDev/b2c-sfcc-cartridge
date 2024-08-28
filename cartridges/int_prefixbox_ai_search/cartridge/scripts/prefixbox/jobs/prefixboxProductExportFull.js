@@ -4,6 +4,7 @@
 var ArrayList = require('dw/util/ArrayList');
 var Logger = require('dw/system/Logger').getLogger('Prefixbox');
 var ProductMgr = require('dw/catalog/ProductMgr');
+var UUIDUtils = require('dw/util/UUIDUtils');
 
 var prefixboxServiceHelper = null;
 var prefixboxHelper = null;
@@ -19,6 +20,8 @@ var customProperties = null;
 var productVariantExport = null;
 var fields = null;
 var products;
+var id = UUIDUtils.createUUID();
+var chunkIndex = 0;
 
 exports.beforeStep = function (parameters, stepExecution) {
     prefixboxHelper = require('*/cartridge/scripts/prefixbox/helper/prefixboxHelper');
@@ -68,23 +71,35 @@ exports.write = function (lines, parameters, stepExecution) {
     }
 };
 
-exports.afterStep = function (success, parameters, stepExecution) {
-    if (productSyncEnabled) {
+exports.afterChunk = function (stepExecution, parameters) {
+    if(productSyncEnabled && !empty(productsToExport) && productsToExport.length > 0) {
         productFile = prefixboxHelper.writeProductFile(sourceFolder, productsToExport);
         Logger.info('Total products Exported: {0}', productsToExport.length);
         productsToExport = [];
 
-        var uploadServiceResult = prefixboxServiceHelper.uploadFeedService(productFile);
+        var uploadServiceResult = prefixboxServiceHelper.uploadFeedService(productFile, id, chunkIndex);
+
+        chunkIndex++;
 
         if (!empty(uploadServiceResult) && uploadServiceResult.ok) {
-            products.close();
-
             Logger.info('File uploaded successfully');
 
             if (parameters.get('deleteFile')) {
                 productFile.remove();
                 Logger.info('File uploaded and removed successfully ' + productFile.path + '');
             }
+        }
+    }   
+};
+
+exports.afterStep = function (success, parameters, stepExecution) {
+    if (productSyncEnabled) {
+        var uploadServiceResult = prefixboxServiceHelper.finishFeedService(id);
+
+        if (!empty(uploadServiceResult) && uploadServiceResult.ok) {
+            products.close();
+
+            Logger.info('Finish feed process request sent successfully');
         }
     }
 };

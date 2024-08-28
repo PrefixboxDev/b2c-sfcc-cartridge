@@ -20,6 +20,7 @@ var PREFIXBOX_ENDPOINTS = {
     TEST_CONNECTION: '/salesforce/test-connection',
     PRODUCT_CATALOG_SYNC: '/salesforce/suggestion-list/create',
     PRODUCT_FEED_UPLOAD: '/salesforce/upload/product-feed',
+    PRODUCT_FEED_FINISH: '/salesforce/upload/finish-feed/:streamId',
     GET_SUGGESTION_LIST: '/salesforce/website/suggestion-list',
     GET_FILE_VERSIONS: '/salesforce/fileversions/:tracker',
     CREATE_SEARCH: '/salesforce/create-search',

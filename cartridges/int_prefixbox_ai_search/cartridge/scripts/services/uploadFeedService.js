@@ -15,7 +15,7 @@ var FileReader = require('dw/io/FileReader');
  * @param {Object} httpHeaders - httpHeaders
  * @returns {Object}-httpRequest
  */
-function createUploadRequest(method, endPoint, httpHeaders) {
+function createUploadRequest(method, endPoint, httpHeaders, id, chunkIndex) {
     var prefixboxConstants = require('*/cartridge/scripts/prefixbox/lib/constants');
     var httpRequest = LocalServiceRegistry.createService(prefixboxConstants.PREFIXBOX_SERVICES.PREFIXBOX_API_ENDPOINT_SERVICE, {
         createRequest: function (svc, args) {
@@ -27,7 +27,7 @@ function createUploadRequest(method, endPoint, httpHeaders) {
             Object.keys(parseHeader).forEach(function (key) {
                 svc.addHeader(key, parseHeader[key]);
             });
-            svc.setURL(baseURL + endPoint);
+            svc.setURL(baseURL + endPoint + '/' + chunkIndex + '/' + id);
             svc.setRequestMethod(method);
 
             if (args) {
