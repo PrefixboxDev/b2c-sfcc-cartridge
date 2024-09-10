@@ -190,6 +190,7 @@ function getProductsData(product, customProps) {
             oldPrice: product.priceModel.maxPrice.value,
             description: product.shortDescription ? product.shortDescription.source : '',
             availability: product.availabilityModel.availabilityStatus,
+            variantId: product.masterProduct.ID,
         }
 
         if (customProps.size && checkInProductCustomsAttr(product.custom, 'size') && !empty(product.custom.size)) {
